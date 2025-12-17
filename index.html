@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheryl Mathew - AI Developer Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(-45deg, #E0F4FF, #DBEAFE, #E0E7FF, #E0F2FE);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-pink-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold text-blue-300">
+                    Sheryl Mathew
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-pink-400 transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-pink-400 transition">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-pink-400 transition">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-pink-400 transition">Projects</a>
+                    <a href="#experience" class="text-gray-700 hover:text-pink-400 transition">Experience</a>
+                    <a href="#education" class="text-gray-700 hover:text-pink-400 transition">Education</a>
+                    <a href="#contact" class="text-gray-700 hover:text-pink-400 transition">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-pink-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 hover:bg-pink-50 rounded text-gray-700">Home</a>
+                <a href="#about" class="block px-3 py-2 hover:bg-pink-50 rounded text-gray-700">About</a>
+                <a href="#skills" class="block px-3 py-2 hover:bg-pink-50 rounded text-gray-700">Skills</a>
+                <a href="#projects" class="block px-3 py-2 hover:bg-pink-50 rounded text-gray-700">Projects</a>
+                <a href="#experience" class="block px-3 py-2 hover:bg-pink-50 rounded text-gray-700">Experience</a>
+                <a href="#education" class="block px-3 py-2 hover:bg-pink-50 rounded text-gray-700">Education</a>
+                <a href="#contact" class="block px-3 py-2 hover:bg-pink-50 rounded text-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="float-animation mb-8">
+                <div class="w-32 h-32 mx-auto bg-gradient-to-r from-pink-300 to-purple-300 rounded-full flex items-center justify-center text-5xl shadow-lg">
+                    🤖
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                <span class="text-blue-300">
+                    Sheryl Mathew
+                </span>
+            </h1>
+            <p class="text-2xl md:text-3xl text-gray-700 mb-4 font-semibold">AI Developer</p>
+            <div class="text-xl md:text-2xl text-gray-700 mb-8 inline-block font-medium">
+                <span id="typing-text"></span>
+            </div>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Crafting intelligent solutions with Machine Learning, Deep Learning, and Natural Language Processing
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="bg-gradient-to-r from-pink-300 to-purple-300 hover:from-pink-400 hover:to-purple-400 text-gray-800 px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105 shadow-md">
+                    View My Work
+                </a>
+                <a href="#contact" class="border-2 border-pink-300 hover:bg-pink-50 text-gray-700 px-8 py-3 rounded-lg font-semibold transition shadow-sm">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 fade-in">
+                <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                    About Me
+                </span>
+            </h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="fade-in">
+                    <div class="bg-white rounded-lg p-8 border border-purple-200 shadow-lg">
+                        <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                            Hi, I'm a Computer Science undergraduate passionate about building intelligent systems that make a real impact. I love exploring machine learning, reinforcement learning, and algorithmic fairness to create solutions that are both powerful and ethical.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            My toolkit includes Python, Java, SQL, and modern AI frameworks, and I enjoy turning ideas into deployable products while fine-tuning models for peak performance. When I'm not coding, I focus on presenting complex technical concepts in a way that's clear and accessible.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gradient-to-br from-pink-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 fade-in">
+                <span class="bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                    Technical Skills
+                </span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Skill Category 1 -->
+                <div class="fade-in bg-white p-8 rounded-lg border border-pink-200 shadow-md">
+                    <h3 class="text-2xl font-bold mb-6 text-pink-400">Programming Languages</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">Python</span>
+                                <span class="text-pink-400">93%</span>
+                            </div>
+                            <div class="bg-pink-100 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-pink-300 to-pink-400 h-3 rounded-full" style="width: 0%" data-width="93%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">SQL</span>
+                                <span class="text-pink-400">91%</span>
+                            </div>
+                            <div class="bg-pink-100 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-pink-300 to-pink-400 h-3 rounded-full" style="width: 0%" data-width="91%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">MongoDB</span>
+                                <span class="text-pink-400">70%</span>
+                            </div>
+                            <div class="bg-pink-100 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-pink-300 to-pink-400 h-3 rounded-full" style="width: 0%" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">Java</span>
+                                <span class="text-pink-400">60%</span>
+                            </div>
+                            <div class="bg-pink-100 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-pink-300 to-pink-400 h-3 rounded-full" style="width: 0%" data-width="60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Category 2 -->
+                <div class="fade-in bg-white p-8 rounded-lg border border-blue-200 shadow-md">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400">Frameworks & Tools</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">NumPy / Pandas</span>
+                                <span class="text-blue-400">97%</span>
+                            </div>
+                            <div class="bg-blue-100 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-blue-300 to-blue-400 h-3 rounded-full" style="width: 0%" data-width="97%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">TensorFlow / PyTorch</span>
+                                <span class="text-blue-400">80%</span>
+                            </div>
+                            <div class="bg-blue-100 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-blue-300 to-blue-400 h-3 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">NLTK</span>
+                                <span class="text-blue-400">65%</span>
+                            </div>
+                            <div class="bg-blue-100 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-blue-300 to-blue-400 h-3 rounded-full" style="width: 0%" data-width="65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 fade-in">
+                <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Featured Projects
+                </span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card fade-in bg-white rounded-lg overflow-hidden border border-blue-200 shadow-md">
+                    <div class="bg-gradient-to-br from-blue-100 to-purple-100 p-8 h-48 flex items-center justify-center text-6xl">
+                        🎯
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-blue-500">Smart Object Detection</h3>
+                        <p class="text-gray-600 mb-4">Real-time object detection system using YOLO and custom CNN architectures for industrial automation.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">PyTorch</span>
+                            <span class="bg-purple-100 text-purple-500 px-3 py-1 rounded-full text-sm">OpenCV</span>
+                            <span class="bg-green-100 text-green-500 px-3 py-1 rounded-full text-sm">YOLO</span>
+                        </div>
+                        <a href="#" class="text-blue-500 hover:text-blue-600 transition inline-flex items-center font-medium">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card fade-in bg-white rounded-lg overflow-hidden border border-purple-200 shadow-md">
+                    <div class="bg-gradient-to-br from-purple-100 to-pink-100 p-8 h-48 flex items-center justify-center text-6xl">
+                        💬
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-purple-500">NLP Chatbot Engine</h3>
+                        <p class="text-gray-600 mb-4">Advanced conversational AI using transformer models and GPT architecture for customer support automation.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">Transformers</span>
+                            <span class="bg-purple-100 text-purple-500 px-3 py-1 rounded-full text-sm">BERT</span>
+                            <span class="bg-green-100 text-green-500 px-3 py-1 rounded-full text-sm">NLP</span>
+                        </div>
+                        <a href="#" class="text-purple-500 hover:text-purple-600 transition inline-flex items-center font-medium">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card fade-in bg-white rounded-lg overflow-hidden border border-green-200 shadow-md">
+                    <div class="bg-gradient-to-br from-green-100 to-teal-100 p-8 h-48 flex items-center justify-center text-6xl">
+                        📈
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-green-500">Predictive Analytics Platform</h3>
+                        <p class="text-gray-600 mb-4">Machine learning platform for forecasting business metrics using ensemble methods and time series analysis.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">Scikit-learn</span>
+                            <span class="bg-purple-100 text-purple-500 px-3 py-1 rounded-full text-sm">XGBoost</span>
+                            <span class="bg-green-100 text-green-500 px-3 py-1 rounded-full text-sm">Prophet</span>
+                        </div>
+                        <a href="#" class="text-green-500 hover:text-green-600 transition inline-flex items-center font-medium">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card fade-in bg-white rounded-lg overflow-hidden border border-orange-200 shadow-md">
+                    <div class="bg-gradient-to-br from-orange-100 to-red-100 p-8 h-48 flex items-center justify-center text-6xl">
+                        🖼️
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-orange-500">Image Generation AI</h3>
+                        <p class="text-gray-600 mb-4">Generative adversarial network for creating high-quality synthetic images and style transfer applications.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-500 px-3 py-1 rounded-full text-sm">GANs</span>
+                            <span class="bg-purple-100 text-purple-500 px-3 py-1 rounded-full text-sm">StyleGAN</span>
+                            <span class="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+                        </div>
+                        <a href="#" class="text-orange-500 hover:text-orange-600 transition inline-flex items-center font-medium">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card fade-in bg-white rounded-lg overflow-hidden border border-cyan-200 shadow-md">
+                    <div class="bg-gradient-to-br from-cyan-100 to-blue-100 p-8 h-48 flex items-center justify-center text-6xl">
+                        🎵
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-cyan-500">Speech Recognition System</h3>
+                        <p class="text-gray-600 mb-4">Deep learning-based speech-to-text engine with multi-language support and noise reduction capabilities.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-cyan-100 text-cyan-500 px-3 py-1 rounded-full text-sm">RNN</span>
+                            <span class="bg-purple-100 text-purple-500 px-3 py-1 rounded-full text-sm">Wav2Vec</span>
+                            <span class="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">PyTorch</span>
+                        </div>
+                        <a href="#" class="text-cyan-500 hover:text-cyan-600 transition inline-flex items-center font-medium">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card fade-in bg-white rounded-lg overflow-hidden border border-pink-200 shadow-md">
+                    <div class="bg-gradient-to-br from-pink-100 to-rose-100 p-8 h-48 flex items-center justify-center text-6xl">
+                        🏥
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-pink-500">Medical Diagnosis AI</h3>
+                        <p class="text-gray-600 mb-4">CNN-based medical image analysis for detecting anomalies in X-rays and MRI scans with 98% accuracy.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-pink-100 text-pink-500 px-3 py-1 rounded-full text-sm">ResNet</span>
+                            <span class="bg-purple-100 text-purple-500 px-3 py-1 rounded-full text-sm">U-Net</span>
+                            <span class="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">Keras</span>
+                        </div>
+                        <a href="#" class="text-pink-500 hover:text-pink-600 transition inline-flex items-center font-medium">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 fade-in">
+                <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Work Experience
+                </span>
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Experience Item 1 -->
+                <div class="fade-in bg-white rounded-lg p-8 border border-purple-200 shadow-md">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-500">AI & Data Scientist Assistant</h3>
+                            <p class="text-lg text-gray-700">Parfums De Marly</p>
+                        </div>
+                        <div class="text-gray-600 mt-2 md:mt-0">
+                            <span class="bg-purple-100 px-4 py-2 rounded-lg">Oct 2024 - Present</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Spearheaded the design and implementation of the company's first AI and data science initiatives, establishing foundational practices for data-driven decision-making.</li>
+                        <li>Developed and deployed end-to-end machine learning models for forecasting, personalization, and business insights — independently managing the full workflow from data collection to model evaluation.</li>
+                        <li>Introduced AI-driven automation and analytical tools that streamlined reporting and improved decision efficiency across departments.</li>
+                        <li>Pioneered generative AI use cases, including LLM-based recommendation and analysis tools to enhance enterprise intelligence.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 fade-in">
+                <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Education
+                </span>
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Education Item 1 -->
+                <div class="fade-in bg-white rounded-lg p-8 border border-purple-200 shadow-md">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-500">BTech in Computer Science Engineering</h3>
+                            <p class="text-lg text-gray-700">Vellore Institute Of Technology</p>
+                        </div>
+                        <div class="text-gray-600 mt-2 md:mt-0">
+                            <span class="bg-purple-100 px-4 py-2 rounded-lg">Sep 2022 - Present</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Item 2 -->
+                <div class="fade-in bg-white rounded-lg p-8 border border-pink-200 shadow-md">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-pink-500">High School Diploma</h3>
+                            <p class="text-lg text-gray-700">Our Own English High School, Dubai</p>
+                        </div>
+                        <div class="text-gray-600 mt-2 md:mt-0">
+                            <span class="bg-pink-100 px-4 py-2 rounded-lg">April 2008 - May 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 fade-in">
+                <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Get In Touch
+                </span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <form id="contact-form" action="https://formspree.io/f/xeowqokv" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">Name</label>
+                            <input type="text" name="name" required class="w-full bg-white border border-purple-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-purple-400 transition shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">Email</label>
+                            <input type="email" name="email" required class="w-full bg-white border border-purple-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-purple-400 transition shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">Message</label>
+                            <textarea name="message" rows="4" required class="w-full bg-white border border-purple-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-purple-400 transition shadow-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-300 to-pink-300 hover:from-purple-400 hover:to-pink-400 text-gray-800 px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105 shadow-md">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="fade-in space-y-6">
+                    <div class="bg-white p-6 rounded-lg border border-blue-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-3xl">📧</div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-blue-500">Email</h3>
+                                <p class="text-gray-600">sherylmatthew19@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-purple-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-3xl">📱</div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-purple-500">Phone</h3>
+                                <p class="text-gray-600">+971 56 916 0328</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-pink-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-3xl">📍</div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-pink-500">Location</h3>
+                                <p class="text-gray-600">Dubai, U.A.E</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-purple-200 shadow-md">
+                        <h3 class="text-lg font-semibold mb-4 text-purple-500">Social Links</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/sheryl-mathew-079b43253/" target="_blank" rel="noopener noreferrer" class="bg-blue-100 hover:bg-blue-200 w-12 h-12 rounded-lg flex items-center justify-center transition transform hover:scale-110" title="LinkedIn">
+                                <span class="text-xl">💼</span>
+                            </a>
+                            <a href="https://github.com/sherylmatthew" target="_blank" rel="noopener noreferrer" class="bg-purple-100 hover:bg-purple-200 w-12 h-12 rounded-lg flex items-center justify-center transition transform hover:scale-110" title="GitHub">
+                                <span class="text-xl">🐙</span>
+                            </a>
+                            <a href="#" class="bg-pink-100 hover:bg-pink-200 w-12 h-12 rounded-lg flex items-center justify-center transition transform hover:scale-110" title="Instagram">
+                                <span class="text-xl">📷</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t border-purple-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-600">
+                &copy; 2024 Sheryl Mathew. Built with passion for artificial intelligence.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Typing Animation
+        const phrases = [
+            'Building Intelligent Systems',
+            'Machine Learning Expert',
+            'Deep Learning Specialist',
+            'AI Research & Development'
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingText = document.getElementById('typing-text');
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(type, 1000);
+        });
+
+        // Scroll Animation for Fade-in Elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Skill Bar Animation
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('#skills').forEach(el => {
+            skillObserver.observe(el);
+        });
+
+        // Contact form now handled by Formspree - no custom JavaScript needed
+
+        // Smooth scroll offset for fixed nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 64;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
